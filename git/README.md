@@ -83,3 +83,25 @@ También puedes utilizar este comando corto para borrar
 `git fetch -p`
 
 La flag -p significa "prune". Después de hacer el fetching, los branches que ya no existan en el repositorio remoto serán eliminados en el repositorio local.
+
+## Configurar credenciales por repositorio
+
+Si necesitas usar una identidad distinta solo en el proyecto actual, ejecuta los siguientes comandos dentro del repositorio para sobreescribir la configuración global:
+
+```bash
+git config user.name "<nombre>"
+git config user.email "<correo>"
+```
+
+Opcionalmente puedes guardar las credenciales para este repositorio mediante un helper, por ejemplo:
+
+```bash
+git config credential.helper store
+```
+
+Para verificar los valores configurados de forma local utiliza:
+
+```bash
+git config --list --local
+```
+
